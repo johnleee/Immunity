@@ -1,5 +1,5 @@
 //
-//  Heartworm.h
+//  ObstacleW.h
 //  Immunity
 //
 //  Created by John Lee on 7/11/14.
@@ -8,6 +8,6 @@
 
 #import "CCNode.h"
 
-@interface Heartworm : CCNode
+@interface ObstacleW : CCNode
 - (void)setupRandomPosition;
 @end

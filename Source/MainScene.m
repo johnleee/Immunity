@@ -7,7 +7,7 @@
 //
 
 #import "MainScene.h"
-#import "Heartworm.h"
+#import "ObstacleW.h"
 
 static const CGFloat scrollSpeed = 80.f;
 static const CGFloat firstHeartwormPosition = 180.f;
@@ -22,7 +22,7 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
     CCNode *_sky2;
     NSArray *_grounds;
     NSArray *_skys;
-    NSMutableArray *_heartworms;
+    NSMutableArray *_obstaclesW;
     NSInteger _points;
     CCLabelTTF *_scoreLabel;
 
@@ -36,10 +36,10 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
     // set collision txpe
     _whiteblood.physicsBody.collisionType = @"whiteblood";
     
-    _heartworms = [NSMutableArray array];
-    [self spawnNewHeartworm];
-    [self spawnNewHeartworm];
-    [self spawnNewHeartworm];
+    _obstaclesW = [NSMutableArray array];
+    [self spawnNewObstacleW];
+    [self spawnNewObstacleW];
+    [self spawnNewObstacleW];
 }
 
 - (void)update:(CCTime)delta {
@@ -70,11 +70,11 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
     }
     
     // clamp velocity
-    float yVelocity = clampf(_whiteblood.physicsBody.velocity.y, -1 * MAXFLOAT, 50.f);
+    float yVelocity = clampf(_whiteblood.physicsBody.velocity.y, -1 * MAXFLOAT, 75.f);
     _whiteblood.physicsBody.velocity = ccp(0, yVelocity);
     
     NSMutableArray *offScreenObstacles = nil;
-    for (CCNode *obstacle in _heartworms) {
+    for (CCNode *obstacle in _obstaclesW) {
         CGPoint obstacleWorldPosition = [_physicsNode convertToWorldSpace:obstacle.position];
         CGPoint obstacleScreenPosition = [self convertToNodeSpace:obstacleWorldPosition];
         if (obstacleScreenPosition.x < -obstacle.contentSize.width) {
@@ -86,14 +86,14 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
     }
     for (CCNode *obstacleToRemove in offScreenObstacles) {
         [obstacleToRemove removeFromParent];
-        [_heartworms removeObject:obstacleToRemove];
+        [_obstaclesW removeObject:obstacleToRemove];
         // for each removed obstacle, add a new one
-        [self spawnNewHeartworm];
+        [self spawnNewObstacleW];
     }
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    [_whiteblood.physicsBody applyImpulse:ccp(0, 100.f)];
+    [_whiteblood.physicsBody applyImpulse:ccp(0, 150.f)];
     
     self.position = ccp(0, 0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:_whiteblood worldBoundary:self.boundingBox];
@@ -101,26 +101,34 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
     
 }
 
-- (void)spawnNewHeartworm {
-    CCNode *previousHeartworm = [_heartworms lastObject];
-    CGFloat previousHeartwormXPosition = previousHeartworm.position.x;
-    if (!previousHeartworm) {
+- (void)spawnNewObstacleW {
+    CCNode *previousObstacleW = [_obstaclesW lastObject];
+    CGFloat previousObstacleWXPosition = previousObstacleW.position.x;
+    if (!previousObstacleW) {
         // this is the first heartworm
-        previousHeartwormXPosition = firstHeartwormPosition;
+        previousObstacleWXPosition = firstHeartwormPosition;
     }
-    Heartworm *heartworm = (Heartworm *)[CCBReader load:@"Heartworm"];
-    heartworm.position = ccp(previousHeartwormXPosition + distanceBetweenHeartworms, 50);
-    [heartworm setupRandomPosition];
+    ObstacleW *obstacleW = (ObstacleW *)[CCBReader load:@"ObstacleW"];
+    obstacleW.position = ccp(previousObstacleWXPosition + distanceBetweenHeartworms, 50);
+    [obstacleW setupRandomPosition];
     
-    [_physicsNode addChild:heartworm];
-    [_heartworms addObject:heartworm];
+    [_physicsNode addChild:obstacleW];
+    [_obstaclesW addObject:obstacleW];
+}
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair whiteblood:(CCNode *)whiteblood worm:(CCNode *)worm {
+    NSLog(@"Something collided with a worm");
+    [worm removeFromParent];
+    return TRUE;
 }
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair whiteblood:(CCNode *)whiteblood goal:(CCNode *)goal {
+    CCLOG(@"Something collided with a goal!");
     [goal removeFromParent];
     _points++;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _points];
     return TRUE;
 }
+
 
 @end

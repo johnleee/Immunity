@@ -49,11 +49,76 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>Platformer-Pixel245</string>
+				<string>heartworm</string>
 				<key>memberVarAssignmentName</key>
 				<string>_heartworm</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
+				<key>physicsBody</key>
+				<dict>
+					<key>affectedByGravity</key>
+					<true/>
+					<key>allowsRotation</key>
+					<true/>
+					<key>bodyShape</key>
+					<integer>0</integer>
+					<key>collisionCategories</key>
+					<array/>
+					<key>collisionMask</key>
+					<array/>
+					<key>collisionType</key>
+					<string></string>
+					<key>cornerRadius</key>
+					<real>0.0</real>
+					<key>density</key>
+					<real>1</real>
+					<key>dynamic</key>
+					<false/>
+					<key>elasticity</key>
+					<real>0.30000001192092896</real>
+					<key>friction</key>
+					<real>0.30000001192092896</real>
+					<key>points</key>
+					<array>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+						</array>
+						<array>
+							<real>0.0</real>
+							<real>16</real>
+						</array>
+						<array>
+							<real>42</real>
+							<real>16</real>
+						</array>
+						<array>
+							<real>42</real>
+							<real>0.0</real>
+						</array>
+					</array>
+					<key>polygons</key>
+					<array>
+						<array>
+							<array>
+								<real>42</real>
+								<real>0.0</real>
+							</array>
+							<array>
+								<real>42</real>
+								<real>16</real>
+							</array>
+							<array>
+								<real>0.0</real>
+								<real>16</real>
+							</array>
+							<array>
+								<real>0.0</real>
+								<real>0.0</real>
+							</array>
+						</array>
+					</array>
+				</dict>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -273,7 +338,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Heartworm</string>
+		<string>ObstacleW</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -342,6 +407,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
