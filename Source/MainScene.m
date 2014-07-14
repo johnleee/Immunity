@@ -11,6 +11,7 @@
 
 static const CGFloat firstHeartwormPosition = 180.f;
 static const CGFloat distanceBetweenHeartworms = 160.f;
+static const NSInteger countdownTime = 5;
 
 @implementation MainScene {
     CCSprite *_whiteblood;
@@ -45,8 +46,8 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
     [self spawnNewObstacleW];
     [self spawnNewObstacleW];
     
-    _scrollSpeed = 80.f;
-    _countTime = 10;
+    _scrollSpeed = 100.f;
+    _countTime = countdownTime;
     [self schedule:@selector(countDown:) interval:1.0f];// 0.5second intervals
 }
 
@@ -134,7 +135,7 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _points];
     
     //reset timer
-    _countTime = 10;
+    _countTime = countdownTime;
     [_timerLabel setString:[NSString stringWithFormat:@"%i", _countTime]];
     return TRUE;
 }
@@ -172,6 +173,7 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
         CCActionSequence *shakeSequence = [CCActionSequence actionWithArray:@[moveBy, reverseMovement]];
         CCActionEaseBounce *bounce = [CCActionEaseBounce actionWithAction:shakeSequence];
         [self runAction:bounce];
+        [self stopAllActions];
     }
 }
 
