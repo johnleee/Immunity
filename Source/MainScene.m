@@ -9,7 +9,6 @@
 #import "MainScene.h"
 #import "ObstacleW.h"
 
-static const CGFloat scrollSpeed = 80.f;
 static const CGFloat firstHeartwormPosition = 180.f;
 static const CGFloat distanceBetweenHeartworms = 160.f;
 
@@ -25,8 +24,13 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
     NSMutableArray *_obstaclesW;
     NSInteger _points;
     CCLabelTTF *_scoreLabel;
-
+    CCLabelTTF *_timerLabel;
+    NSInteger _countTime;
+    CCButton *_restartButton;
+    BOOL _gameOver;
+    CGFloat _scrollSpeed;
 }
+
 - (void)didLoadFromCCB {
     _grounds = @[_ground1, _ground2];
     self.userInteractionEnabled = TRUE;
@@ -40,12 +44,16 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
     [self spawnNewObstacleW];
     [self spawnNewObstacleW];
     [self spawnNewObstacleW];
+    
+    _scrollSpeed = 80.f;
+    _countTime = 10;
+    [self schedule:@selector(countDown:) interval:1.0f];// 0.5second intervals
 }
 
 - (void)update:(CCTime)delta {
     
-    _whiteblood.position = ccp(_whiteblood.position.x + delta * scrollSpeed, _whiteblood.position.y);
-    _physicsNode.position = ccp(_physicsNode.position.x - (scrollSpeed *delta), _physicsNode.position.y);
+    _whiteblood.position = ccp(_whiteblood.position.x + delta * _scrollSpeed, _whiteblood.position.y);
+    _physicsNode.position = ccp(_physicsNode.position.x - (_scrollSpeed *delta), _physicsNode.position.y);
     // loop the ground
     for (CCNode *ground in _grounds) {
         // get the world position of the ground
@@ -93,7 +101,10 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    [_whiteblood.physicsBody applyImpulse:ccp(0, 150.f)];
+    if (!_gameOver) {
+        [_whiteblood.physicsBody applyImpulse:ccp(0, 150.f)];
+        [_whiteblood.physicsBody applyAngularImpulse:10000.f];
+    }
     
     self.position = ccp(0, 0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:_whiteblood worldBoundary:self.boundingBox];
@@ -119,16 +130,49 @@ static const CGFloat distanceBetweenHeartworms = 160.f;
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair whiteblood:(CCNode *)whiteblood worm:(CCNode *)worm {
     NSLog(@"Something collided with a worm");
     [worm removeFromParent];
+    _points++;
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", _points];
+    
+    //reset timer
+    _countTime = 10;
+    [_timerLabel setString:[NSString stringWithFormat:@"%i", _countTime]];
     return TRUE;
 }
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair whiteblood:(CCNode *)whiteblood goal:(CCNode *)goal {
-    CCLOG(@"Something collided with a goal!");
     [goal removeFromParent];
-    _points++;
-    _scoreLabel.string = [NSString stringWithFormat:@"%d", _points];
     return TRUE;
 }
 
+
+-(void)countDown:(CCTime)delta {
+     _countTime--;
+    [_timerLabel setString:[NSString stringWithFormat:@"%i", _countTime]];
+    if (_countTime <= 0) {
+        [self unschedule:@selector(countDown:)];
+        [self gameOver];
+    }
+}
+
+- (void)restart {
+    CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+- (void)gameOver {
+    if (!_gameOver) {
+        _scrollSpeed = 0.f;
+        _gameOver = TRUE;
+        _restartButton.visible = TRUE;
+        _whiteblood.rotation = 90.f;
+        _whiteblood.physicsBody.allowsRotation = FALSE;
+        [_whiteblood stopAllActions];
+        CCActionMoveBy *moveBy = [CCActionMoveBy actionWithDuration:0.2f position:ccp(-2, 2)];
+        CCActionInterval *reverseMovement = [moveBy reverse];
+        CCActionSequence *shakeSequence = [CCActionSequence actionWithArray:@[moveBy, reverseMovement]];
+        CCActionEaseBounce *bounce = [CCActionEaseBounce actionWithAction:shakeSequence];
+        [self runAction:bounce];
+    }
+}
 
 @end
