@@ -132,7 +132,7 @@ static const NSInteger countdownTime = 5;
     NSLog(@"Something collided with a worm");
     [worm removeFromParent];
     _points++;
-    _scoreLabel.string = [NSString stringWithFormat:@"%d", _points];
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", _points * 100];
     
     //reset timer
     _countTime = countdownTime;
