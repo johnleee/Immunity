@@ -129,8 +129,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1165,7 +1163,7 @@
 							<key>cornerRadius</key>
 							<real>16</real>
 							<key>density</key>
-							<real>1</real>
+							<real>2</real>
 							<key>dynamic</key>
 							<true/>
 							<key>elasticity</key>
@@ -1228,6 +1226,8 @@
 								<string>WhiteBlood.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -1443,7 +1443,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Regenerate</string>
+							<string>Regenerate Cell</string>
 							<false/>
 						</array>
 					</dict>
@@ -1535,7 +1535,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>17</real>
+							<real>20</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -1573,7 +1573,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>10</real>
 							<integer>0</integer>
 						</array>
 					</dict>
