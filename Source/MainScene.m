@@ -107,6 +107,9 @@ static const NSInteger countdownTime = 5;
         [_whiteblood.physicsBody applyAngularImpulse:10000.f];
     }
     
+    _points++;
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", _points * 100];
+    
     self.position = ccp(0, 0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:_whiteblood worldBoundary:self.boundingBox];
     [self runAction:follow];
@@ -132,6 +135,7 @@ static const NSInteger countdownTime = 5;
     NSLog(@"Something collided with a worm");
     [worm removeFromParent];
     _points++;
+    
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _points * 100];
     
     //reset timer

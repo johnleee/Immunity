@@ -112,7 +112,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ImmunityArt/background_dreamy-sky-city.png</string>
+							<string>ImmunityArt/dreamy-sky-ip5.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -129,6 +129,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -2686,8 +2688,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
