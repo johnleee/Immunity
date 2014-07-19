@@ -162,8 +162,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>198.39999389648438</real>
-							<real>70.400001525878906</real>
+							<real>21.399999618530273</real>
+							<real>14.399999618530273</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1226,8 +1226,6 @@
 								<string>WhiteBlood.ccb</string>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -1256,7 +1254,7 @@
 						<key>value</key>
 						<array>
 							<real>3</real>
-							<real>0.0</real>
+							<real>1</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1686,8 +1684,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>130</real>
-							<real>288</real>
+							<real>121</real>
+							<real>291</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1743,7 +1741,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>25</real>
+							<real>22</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -1804,10 +1802,10 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>1</real>
+							<real>0.40000000596046448</real>
+							<real>0.40000000596046448</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -1817,7 +1815,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
+							<real>2</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -1894,7 +1892,7 @@
 						<key>value</key>
 						<array>
 							<real>50</real>
-							<real>288</real>
+							<real>291</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1950,7 +1948,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>25</real>
+							<real>22</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -2011,10 +2009,10 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>1</real>
+							<real>0.40000000596046448</real>
+							<real>0.40000000596046448</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -2024,7 +2022,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
+							<real>2</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -2101,7 +2099,7 @@
 						<key>value</key>
 						<array>
 							<real>300</real>
-							<real>288</real>
+							<real>291</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -2157,7 +2155,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>25</real>
+							<real>22</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -2218,10 +2216,10 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>1</real>
+							<real>0.40000000596046448</real>
+							<real>0.40000000596046448</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -2231,7 +2229,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
+							<real>2</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -2274,6 +2272,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -2307,8 +2307,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>410</real>
-							<real>288</real>
+							<real>400</real>
+							<real>291</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -2364,7 +2364,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>25</real>
+							<real>22</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -2425,10 +2425,10 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>1</real>
+							<real>0.40000000596046448</real>
+							<real>0.40000000596046448</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -2438,7 +2438,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
+							<real>2</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -2514,8 +2514,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>430</real>
-							<real>288</real>
+							<real>420</real>
+							<real>291</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -2571,7 +2571,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>25</real>
+							<real>22</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -2632,10 +2632,10 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>1</real>
+							<real>0.40000000596046448</real>
+							<real>0.40000000596046448</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -2645,7 +2645,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
+							<real>2</real>
 							<integer>0</integer>
 						</array>
 					</dict>
