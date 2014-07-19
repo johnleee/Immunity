@@ -1163,7 +1163,7 @@
 							<key>cornerRadius</key>
 							<real>16</real>
 							<key>density</key>
-							<real>2</real>
+							<real>1</real>
 							<key>dynamic</key>
 							<true/>
 							<key>elasticity</key>
@@ -1255,7 +1255,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>2</real>
+							<real>3</real>
 							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1307,7 +1307,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>-50</real>
+							<real>-100</real>
 						</array>
 					</dict>
 					<dict>
