@@ -13,7 +13,7 @@
 static const CGFloat firstHeartwormPosition = 180.f;
 static const CGFloat distanceBetweenHeartworms = 160.f;
 static const CGFloat firstHIVPosition = 400.f;
-static const CGFloat distanceBetweenHIVs = 500.f;
+static const CGFloat distanceBetweenHIVs = 900.f;
 static const NSInteger countdownTime = 5;
 
 @implementation MainScene {
@@ -108,6 +108,25 @@ static const NSInteger countdownTime = 5;
         // for each removed obstacle, add a new one
         [self spawnNewObstacleW];
     }
+    
+    NSMutableArray *offScreenObstaclesH = nil;
+    for (CCNode *obstacle in _obstaclesHIV) {
+        CGPoint obstacleWorldPosition = [_physicsNode convertToWorldSpace:obstacle.position];
+        CGPoint obstacleScreenPosition = [self convertToNodeSpace:obstacleWorldPosition];
+        if (obstacleScreenPosition.x < -obstacle.contentSize.width) {
+            if (!offScreenObstaclesH) {
+                offScreenObstaclesH = [NSMutableArray array];
+            }
+            [offScreenObstaclesH addObject:obstacle];
+        }
+    }
+    for (CCNode *obstacleToRemove in offScreenObstaclesH) {
+        [obstacleToRemove removeFromParent];
+        [_obstaclesHIV removeObject:obstacleToRemove];
+        // for each removed obstacle, add a new one
+        [self spawnNewObstacleHIV];
+    }
+    
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
