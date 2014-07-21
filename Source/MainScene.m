@@ -8,9 +8,12 @@
 
 #import "MainScene.h"
 #import "ObstacleW.h"
+#import "ObstacleHIV.h"
 
 static const CGFloat firstHeartwormPosition = 180.f;
 static const CGFloat distanceBetweenHeartworms = 160.f;
+static const CGFloat firstHIVPosition = 400.f;
+static const CGFloat distanceBetweenHIVs = 500.f;
 static const NSInteger countdownTime = 5;
 
 @implementation MainScene {
@@ -23,6 +26,7 @@ static const NSInteger countdownTime = 5;
     NSArray *_grounds;
     NSArray *_skys;
     NSMutableArray *_obstaclesW;
+    NSMutableArray *_obstaclesHIV;
     NSInteger _points;
     CCLabelTTF *_scoreLabel;
     CCLabelTTF *_timerLabel;
@@ -45,6 +49,11 @@ static const NSInteger countdownTime = 5;
     [self spawnNewObstacleW];
     [self spawnNewObstacleW];
     [self spawnNewObstacleW];
+    
+    _obstaclesHIV = [NSMutableArray array];
+    [self spawnNewObstacleHIV];
+    [self spawnNewObstacleHIV];
+    [self spawnNewObstacleHIV];
     
     _scrollSpeed = 100.f;
     _countTime = countdownTime;
@@ -131,6 +140,21 @@ static const NSInteger countdownTime = 5;
     [_obstaclesW addObject:obstacleW];
 }
 
+- (void)spawnNewObstacleHIV {
+    CCNode *previousObstacleHIV = [_obstaclesHIV lastObject];
+    CGFloat previousObstacleHIVXPosition = previousObstacleHIV.position.x;
+    if (!previousObstacleHIV) {
+        // this is the first heartworm
+        previousObstacleHIVXPosition = firstHIVPosition;
+    }
+    ObstacleHIV *obstacleHIV = (ObstacleHIV *)[CCBReader load:@"ObstacleHIV"];
+    obstacleHIV.position = ccp(previousObstacleHIVXPosition + distanceBetweenHIVs, 50);
+    [obstacleHIV setupRandomPosition];
+    
+    [_physicsNode addChild:obstacleHIV];
+    [_obstaclesHIV addObject:obstacleHIV];
+}
+
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair whiteblood:(CCNode *)whiteblood worm:(CCNode *)worm {
     NSLog(@"Something collided with a worm");
     // load particle effect
@@ -159,6 +183,12 @@ static const NSInteger countdownTime = 5;
     return TRUE;
 }
 
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair whiteblood:(CCNode *)whiteblood hiv:(CCNode *)hiv {
+    NSLog(@"Something collided with a hiv");
+    [self unschedule:@selector(countDown:)];
+    [self gameOver];
+    return TRUE;
+}
 
 -(void)countDown:(CCTime)delta {
      _countTime--;

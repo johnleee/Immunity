@@ -36,6 +36,7 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
+		EB6D2385197CDCDB004F8A71 /* ObstacleHIV.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6D2384197CDCDB004F8A71 /* ObstacleHIV.m */; };
 		EB77E7A01970AABD009B8C8D /* ObstacleW.m in Sources */ = {isa = PBXBuildFile; fileRef = EB77E79F1970AABD009B8C8D /* ObstacleW.m */; };
 		EB77E7A41970AECC009B8C8D /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = EB77E7A31970AECC009B8C8D /* Goal.m */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,8 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
+		EB6D2383197CDCDB004F8A71 /* ObstacleHIV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObstacleHIV.h; path = Source/ObstacleHIV.h; sourceTree = "<group>"; };
+		EB6D2384197CDCDB004F8A71 /* ObstacleHIV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObstacleHIV.m; path = Source/ObstacleHIV.m; sourceTree = "<group>"; };
 		EB77E79E1970AABD009B8C8D /* ObstacleW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObstacleW.h; path = Source/ObstacleW.h; sourceTree = "<group>"; };
 		EB77E79F1970AABD009B8C8D /* ObstacleW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObstacleW.m; path = Source/ObstacleW.m; sourceTree = "<group>"; };
 		EB77E7A21970AECC009B8C8D /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Goal.h; path = Source/Goal.h; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				EB6D2383197CDCDB004F8A71 /* ObstacleHIV.h */,
+				EB6D2384197CDCDB004F8A71 /* ObstacleHIV.m */,
 				EB77E7A21970AECC009B8C8D /* Goal.h */,
 				EB77E7A31970AECC009B8C8D /* Goal.m */,
 				EB77E79E1970AABD009B8C8D /* ObstacleW.h */,
@@ -350,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB6D2385197CDCDB004F8A71 /* ObstacleHIV.m in Sources */,
 				EB77E7A41970AECC009B8C8D /* Goal.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,

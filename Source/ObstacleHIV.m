@@ -1,16 +1,16 @@
 //
-//  ObstacleW.m
+//  ObstacleHIV.m
 //  Immunity
 //
-//  Created by John Lee on 7/11/14.
+//  Created by John Lee on 7/20/14.
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "ObstacleW.h"
+#import "ObstacleHIV.h"
 
-@implementation ObstacleW {
-    CCNode *_heartworm;
-   }
+@implementation ObstacleHIV{
+    CCNode *_hiv;
+}
 #define ARC4RANDOM_MAX      0x100000000
 // visibility on a 3,5-inch iPhone ends a 88 points and we want some meat
 static const CGFloat minimumYPositionTopPipe = 28.f;
@@ -23,8 +23,8 @@ static const CGFloat maximumYPositionTopPipe = maximumYPositionBottomPipe - pipe
 
 
 - (void)didLoadFromCCB {
-    _heartworm.physicsBody.collisionType = @"worm";
-    _heartworm.physicsBody.sensor = TRUE;
+    _hiv.physicsBody.collisionType = @"hiv";
+    _hiv.physicsBody.sensor = TRUE;
 }
 
 - (void)setupRandomPosition {
@@ -33,5 +33,5 @@ static const CGFloat maximumYPositionTopPipe = maximumYPositionBottomPipe - pipe
     CGFloat range = maximumYPositionTopPipe - minimumYPositionTopPipe;
     self.position = ccp(self.position.x, minimumYPositionTopPipe + random * range);
 }
-@end
 
+@end
