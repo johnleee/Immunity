@@ -34,12 +34,12 @@ static const CGFloat maximumYPositionTopPipe = maximumYPositionBottomPipe - pipe
     self.position = ccp(self.position.x, minimumYPositionTopPipe + random * range);
     
     
-    CCActionMoveBy* moveUp = [CCActionMoveBy actionWithDuration:1.0f position:ccp(0.0f, 120.0f)];
-    CCActionMoveBy* moveDown = [CCActionMoveBy actionWithDuration:1.0f position:ccp(0.0f, -120.0f)];
-    CCActionMoveBy* moveRight = [CCActionMoveBy actionWithDuration:1.0f position:ccp(50.0f, 0.0f)];
+    CCActionMoveBy* moveUp = [CCActionMoveBy actionWithDuration:1.0f position:ccp(0.0f, 100.0f)];
+    CCActionMoveBy* moveDown = [CCActionMoveBy actionWithDuration:1.0f position:ccp(0.0f, -100.0f)];
+    CCActionMoveBy* moveRight = [CCActionMoveBy actionWithDuration:1.0f position:ccp(120.0f, 0.0f)];
     CCActionMoveBy* moveLeft = [CCActionMoveBy actionWithDuration:1.0f position:ccp(-50.0f, 0.0f)];
 
-    CCActionSequence* upAndDown = [CCActionSequence actions:moveUp, moveDown, moveRight, moveLeft, nil];
+    CCActionSequence* upAndDown = [CCActionSequence actions:moveUp, moveRight, moveDown, moveLeft, nil];
     
     [self runAction:[CCActionRepeatForever actionWithAction:upAndDown]];
 }
