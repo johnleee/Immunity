@@ -12,6 +12,7 @@
     CCNode *_heartworm;
    }
 #define ARC4RANDOM_MAX      0x100000000
+#define ARC4RANDOM_MAX_M    0x100000000
 // visibility on a 3,5-inch iPhone ends a 88 points and we want some meat
 static const CGFloat minimumYPositionTopPipe = 28.f;
 // visibility ends at 480 and we want some meat
@@ -33,13 +34,13 @@ static const CGFloat maximumYPositionTopPipe = maximumYPositionBottomPipe - pipe
     CGFloat range = maximumYPositionTopPipe - minimumYPositionTopPipe;
     self.position = ccp(self.position.x, minimumYPositionTopPipe + random * range);
     
+    CGFloat randomu = ((double)arc4random() / ARC4RANDOM_MAX_M);
+    CGFloat randomd = ((double)arc4random() / ARC4RANDOM_MAX_M);
     
-    CCActionMoveBy* moveUp = [CCActionMoveBy actionWithDuration:1.0f position:ccp(0.0f, 100.0f)];
-    CCActionMoveBy* moveDown = [CCActionMoveBy actionWithDuration:1.0f position:ccp(0.0f, -100.0f)];
-    CCActionMoveBy* moveRight = [CCActionMoveBy actionWithDuration:1.0f position:ccp(120.0f, 0.0f)];
-    CCActionMoveBy* moveLeft = [CCActionMoveBy actionWithDuration:1.0f position:ccp(-50.0f, 0.0f)];
+    CCActionMoveBy* moveUp = [CCActionMoveBy actionWithDuration:1.0f position:ccp(0.0f, minimumYPositionTopPipe + randomu * range)];
+    CCActionMoveBy* moveDown = [CCActionMoveBy actionWithDuration:1.0f position:ccp(0.0f, -(minimumYPositionTopPipe + randomd * range))];
 
-    CCActionSequence* upAndDown = [CCActionSequence actions:moveUp, moveRight, moveDown, moveLeft, nil];
+    CCActionSequence* upAndDown = [CCActionSequence actions:moveUp, moveDown, nil];
     
     [self runAction:[CCActionRepeatForever actionWithAction:upAndDown]];
 }
