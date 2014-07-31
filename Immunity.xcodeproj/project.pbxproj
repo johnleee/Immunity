@@ -26,7 +26,7 @@
 		B7378978180762440076A88C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896E180762440076A88C /* Default@2x.png */; };
 		B73789871807631A0076A88C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B73789851807631A0076A88C /* main.m */; };
 		B737898A1807642B0076A88C /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B737894B180761A90076A88C /* libcocos2d.a */; };
-		B7378994180767190076A88C /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
+		B7378994180767190076A88C /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* Gameplay.m */; };
 		B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3117B978D7009739AE /* QuartzCore.framework */; };
 		B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3317B978D7009739AE /* OpenGLES.framework */; };
 		B77F1B3617B978D7009739AE /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3517B978D7009739AE /* OpenAL.framework */; };
@@ -39,6 +39,7 @@
 		EB6D2385197CDCDB004F8A71 /* ObstacleHIV.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6D2384197CDCDB004F8A71 /* ObstacleHIV.m */; };
 		EB77E7A01970AABD009B8C8D /* ObstacleW.m in Sources */ = {isa = PBXBuildFile; fileRef = EB77E79F1970AABD009B8C8D /* ObstacleW.m */; };
 		EB77E7A41970AECC009B8C8D /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = EB77E7A31970AECC009B8C8D /* Goal.m */; };
+		EBB8F94B1989C704003E3B7E /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB8F94A1989C704003E3B7E /* MainScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +81,8 @@
 		B737896E180762440076A88C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Source/Resources/Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		B73789851807631A0076A88C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = SOURCE_ROOT; };
 		B73789861807631A0076A88C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = Source/Prefix.pch; sourceTree = SOURCE_ROOT; };
-		B7378992180767190076A88C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Source/MainScene.h; sourceTree = "<group>"; };
-		B7378993180767190076A88C /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScene.m; path = Source/MainScene.m; sourceTree = "<group>"; };
+		B7378992180767190076A88C /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Gameplay.h; sourceTree = "<group>"; };
+		B7378993180767190076A88C /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Gameplay.m; sourceTree = "<group>"; };
 		B77F1B2E17B978D7009739AE /* Immunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Immunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77F1B3117B978D7009739AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B77F1B3317B978D7009739AE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -99,6 +100,8 @@
 		EB77E79F1970AABD009B8C8D /* ObstacleW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObstacleW.m; path = Source/ObstacleW.m; sourceTree = "<group>"; };
 		EB77E7A21970AECC009B8C8D /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Goal.h; path = Source/Goal.h; sourceTree = "<group>"; };
 		EB77E7A31970AECC009B8C8D /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Goal.m; path = Source/Goal.m; sourceTree = "<group>"; };
+		EBB8F9491989C704003E3B7E /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Source/MainScene.h; sourceTree = "<group>"; };
+		EBB8F94A1989C704003E3B7E /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScene.m; path = Source/MainScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +139,10 @@
 			children = (
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
-				B7378992180767190076A88C /* MainScene.h */,
-				B7378993180767190076A88C /* MainScene.m */,
+				B7378992180767190076A88C /* Gameplay.h */,
+				B7378993180767190076A88C /* Gameplay.m */,
+				EBB8F9491989C704003E3B7E /* MainScene.h */,
+				EBB8F94A1989C704003E3B7E /* MainScene.m */,
 				EB6D2383197CDCDB004F8A71 /* ObstacleHIV.h */,
 				EB6D2384197CDCDB004F8A71 /* ObstacleHIV.m */,
 				EB77E7A21970AECC009B8C8D /* Goal.h */,
@@ -358,7 +363,8 @@
 				EB6D2385197CDCDB004F8A71 /* ObstacleHIV.m in Sources */,
 				EB77E7A41970AECC009B8C8D /* Goal.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
-				B7378994180767190076A88C /* MainScene.m in Sources */,
+				EBB8F94B1989C704003E3B7E /* MainScene.m in Sources */,
+				B7378994180767190076A88C /* Gameplay.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				EB77E7A01970AABD009B8C8D /* ObstacleW.m in Sources */,
 			);
