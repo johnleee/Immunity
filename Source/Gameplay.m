@@ -31,7 +31,7 @@ static const NSInteger countdownTime = 5;
     CCLabelTTF *_scoreLabel;
     CCLabelTTF *_timerLabel;
     NSInteger _countTime;
-    CCButton *_restartButton;
+    CCButton *_restartMenu;
     BOOL _gameOver;
     CGFloat _scrollSpeed;
 }
@@ -219,6 +219,11 @@ static const NSInteger countdownTime = 5;
 }
 
 - (void)restart {
+    CCScene *scene = [CCBReader loadAsScene:@"Gameplay"];
+    [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+- (void)home {
     CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
 }
@@ -227,7 +232,7 @@ static const NSInteger countdownTime = 5;
     if (!_gameOver) {
         _scrollSpeed = 0.f;
         _gameOver = TRUE;
-        _restartButton.visible = TRUE;
+        _restartMenu.visible = TRUE;
         _whiteblood.rotation = 90.f;
         _whiteblood.physicsBody.allowsRotation = FALSE;
         [_whiteblood stopAllActions];
