@@ -203,7 +203,7 @@ static const NSInteger countdownTime = 5;
 }
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair whiteblood:(CCNode *)whiteblood hiv:(CCNode *)hiv {
-    NSLog(@"Something collided with a hiv");
+    //NSLog(@"Something collided with a hiv");
     [self unschedule:@selector(countDown:)];
     [self gameOver];
     return TRUE;
