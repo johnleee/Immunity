@@ -31,7 +31,6 @@ static const NSInteger countdownTime = 5;
     CCLabelTTF *_scoreLabel;
     CCLabelTTF *_timerLabel;
     NSInteger _countTime;
-    CCButton *_restartMenu;
     BOOL _gameOver;
     CGFloat _scrollSpeed;
 }
@@ -232,7 +231,6 @@ static const NSInteger countdownTime = 5;
     if (!_gameOver) {
         _scrollSpeed = 0.f;
         _gameOver = TRUE;
-        _restartMenu.visible = TRUE;
         _whiteblood.rotation = 90.f;
         _whiteblood.physicsBody.allowsRotation = FALSE;
         [_whiteblood stopAllActions];
@@ -242,6 +240,9 @@ static const NSInteger countdownTime = 5;
         CCActionEaseBounce *bounce = [CCActionEaseBounce actionWithAction:shakeSequence];
         [self runAction:bounce];
         [self stopAllActions];
+        
+        CCScene *scene = [CCBReader loadAsScene:@"Recap"];
+        [[CCDirector sharedDirector] replaceScene:scene];
     }
 }
 
