@@ -591,7 +591,7 @@
 								<key>value</key>
 								<array>
 									<real>-1</real>
-									<real>-8</real>
+									<real>0.0</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -745,7 +745,7 @@
 								<key>value</key>
 								<array>
 									<real>567</real>
-									<real>-8</real>
+									<real>0.0</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -811,6 +811,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -2512,10 +2514,10 @@ Treatment mainly consists of easing the symptoms as there is no actual cure of t
 								<string>Color4</string>
 								<key>value</key>
 								<array>
-									<real>0.0</real>
-									<real>0.0</real>
-									<real>0.0</real>
-									<real>0.0</real>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
 								</array>
 							</dict>
 							<dict>
@@ -2525,7 +2527,7 @@ Treatment mainly consists of easing the symptoms as there is no actual cure of t
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>1</real>
+									<real>0.5</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -3391,8 +3393,6 @@ Treatment mainly consists of easing the symptoms as there is no actual cure of t
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
