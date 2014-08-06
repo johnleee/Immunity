@@ -15,8 +15,8 @@ static const CGFloat firstHeartwormPosition = 180.f;
 static const CGFloat distanceBetweenHeartworms = 160.f;
 static const CGFloat firstHIVPosition = 400.f;
 static const CGFloat distanceBetweenHIVs = 900.f;
-static const CGFloat firstChickenpoxPosition = 280.f;
-static const CGFloat distanceBetweenChickenpoxs = 260.f;
+static const CGFloat firstChickenpoxPosition = 580.f;
+static const CGFloat distanceBetweenChickenpoxs = 1080.f;
 static const NSInteger countdownTime = 5;
 
 @implementation Gameplay {
@@ -134,6 +134,24 @@ static const NSInteger countdownTime = 5;
         [_obstaclesHIV removeObject:obstacleToRemove];
         // for each removed obstacle, add a new one
         [self spawnNewObstacleHIV];
+    }
+    
+    NSMutableArray *offScreenObstaclesZ = nil;
+    for (CCNode *obstacle in _obstaclesZ) {
+        CGPoint obstacleWorldPosition = [_physicsNode convertToWorldSpace:obstacle.position];
+        CGPoint obstacleScreenPosition = [self convertToNodeSpace:obstacleWorldPosition];
+        if (obstacleScreenPosition.x < -obstacle.contentSize.width) {
+            if (!offScreenObstaclesZ) {
+                offScreenObstaclesZ = [NSMutableArray array];
+            }
+            [offScreenObstaclesZ addObject:obstacle];
+        }
+    }
+    for (CCNode *obstacleToRemove in offScreenObstaclesZ) {
+        [obstacleToRemove removeFromParent];
+        [_obstaclesZ removeObject:obstacleToRemove];
+        // for each removed obstacle, add a new one
+        [self spawnNewObstacleZ];
     }
     
 }
