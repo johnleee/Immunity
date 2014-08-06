@@ -175,7 +175,7 @@ static const NSInteger countdownTime = 5;
 }
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair whiteblood:(CCNode *)whiteblood worm:(CCNode *)worm {
-    NSLog(@"Something collided with a worm");
+    //NSLog(@"Something collided with a worm");
     // load particle effect
     CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"WormExplosion"];
     // make the particle effect clean itself up, once it is completed

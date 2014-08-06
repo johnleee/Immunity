@@ -130,8 +130,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.30000001192092896</real>
-							<real>0.30000001192092896</real>
+							<real>0.20000000298023224</real>
+							<real>0.20000000298023224</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -144,7 +144,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ImmunityArt/Type2_Monster.png</string>
+							<string>ImmunityArt/popper_side_1@4x.png</string>
 						</array>
 					</dict>
 					<dict>

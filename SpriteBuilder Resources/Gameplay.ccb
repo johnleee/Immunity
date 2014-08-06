@@ -511,9 +511,9 @@
 						<key>physicsBody</key>
 						<dict>
 							<key>affectedByGravity</key>
-							<false/>
+							<true/>
 							<key>allowsRotation</key>
-							<false/>
+							<true/>
 							<key>bodyShape</key>
 							<integer>0</integer>
 							<key>collisionCategories</key>
@@ -539,15 +539,15 @@
 									<real>0.0</real>
 								</array>
 								<array>
-									<real>0.0</real>
-									<real>50</real>
+									<real>1.2109375</real>
+									<real>16.62109375</real>
 								</array>
 								<array>
-									<real>568</real>
-									<real>50</real>
+									<real>594.44134521484375</real>
+									<real>16.707015991210938</real>
 								</array>
 								<array>
-									<real>568</real>
+									<real>595</real>
 									<real>0.0</real>
 								</array>
 							</array>
@@ -555,16 +555,16 @@
 							<array>
 								<array>
 									<array>
-										<real>568</real>
+										<real>595</real>
 										<real>0.0</real>
 									</array>
 									<array>
-										<real>568</real>
-										<real>50</real>
+										<real>594.44134521484375</real>
+										<real>16.707015991210938</real>
 									</array>
 									<array>
-										<real>0.0</real>
-										<real>50</real>
+										<real>1.2109375</real>
+										<real>16.62109375</real>
 									</array>
 									<array>
 										<real>0.0</real>
@@ -590,8 +590,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>-1</real>
-									<real>0.0</real>
+									<real>-10</real>
+									<real>15</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -629,7 +629,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ImmunityArt/background_dreamy-sky.png</string>
+									<string>ImmunityArt/liquidLavaTopLong.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -665,9 +665,9 @@
 						<key>physicsBody</key>
 						<dict>
 							<key>affectedByGravity</key>
-							<false/>
+							<true/>
 							<key>allowsRotation</key>
-							<false/>
+							<true/>
 							<key>bodyShape</key>
 							<integer>0</integer>
 							<key>collisionCategories</key>
@@ -693,15 +693,15 @@
 									<real>0.0</real>
 								</array>
 								<array>
-									<real>0.0</real>
-									<real>50</real>
+									<real>-0.01959228515625</real>
+									<real>15.1796875</real>
 								</array>
 								<array>
-									<real>568</real>
-									<real>50</real>
+									<real>595.58587646484375</real>
+									<real>17.359359741210938</real>
 								</array>
 								<array>
-									<real>568</real>
+									<real>595</real>
 									<real>0.0</real>
 								</array>
 							</array>
@@ -709,16 +709,16 @@
 							<array>
 								<array>
 									<array>
-										<real>568</real>
+										<real>595</real>
 										<real>0.0</real>
 									</array>
 									<array>
-										<real>568</real>
-										<real>50</real>
+										<real>595.58587646484375</real>
+										<real>17.359359741210938</real>
 									</array>
 									<array>
-										<real>0.0</real>
-										<real>50</real>
+										<real>-0.01959228515625</real>
+										<real>15.1796875</real>
 									</array>
 									<array>
 										<real>0.0</real>
@@ -744,8 +744,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>567</real>
-									<real>0.0</real>
+									<real>570</real>
+									<real>15</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -783,7 +783,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>ImmunityArt/background_dreamy-sky.png</string>
+									<string>ImmunityArt/liquidLavaTopLong.png</string>
 								</array>
 							</dict>
 							<dict>
