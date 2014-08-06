@@ -15,8 +15,8 @@ static const CGFloat firstHeartwormPosition = 180.f;
 static const CGFloat distanceBetweenHeartworms = 160.f;
 static const CGFloat firstHIVPosition = 400.f;
 static const CGFloat distanceBetweenHIVs = 900.f;
-static const CGFloat firstChickenpoxPosition = 580.f;
-static const CGFloat distanceBetweenChickenpoxs = 1080.f;
+static const CGFloat firstChickenpoxPosition = 260.f;
+static const CGFloat distanceBetweenChickenpoxs = 420.f;
 static const NSInteger countdownTime = 5;
 
 @implementation Gameplay {
