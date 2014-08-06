@@ -8,12 +8,15 @@
 
 #import "Gameplay.h"
 #import "ObstacleW.h"
+#import "ObstacleZ.h"
 #import "ObstacleHIV.h"
 
 static const CGFloat firstHeartwormPosition = 180.f;
 static const CGFloat distanceBetweenHeartworms = 160.f;
 static const CGFloat firstHIVPosition = 400.f;
 static const CGFloat distanceBetweenHIVs = 900.f;
+static const CGFloat firstChickenpoxPosition = 280.f;
+static const CGFloat distanceBetweenChickenpoxs = 260.f;
 static const NSInteger countdownTime = 5;
 
 @implementation Gameplay {
@@ -26,6 +29,7 @@ static const NSInteger countdownTime = 5;
     NSArray *_grounds;
     NSArray *_skys;
     NSMutableArray *_obstaclesW;
+    NSMutableArray *_obstaclesZ;
     NSMutableArray *_obstaclesHIV;
     NSInteger _points;
     CCLabelTTF *_scoreLabel;
@@ -49,6 +53,11 @@ static const NSInteger countdownTime = 5;
     [self spawnNewObstacleW];
     [self spawnNewObstacleW];
     [self spawnNewObstacleW];
+    
+    _obstaclesZ = [NSMutableArray array];
+    [self spawnNewObstacleZ];
+    [self spawnNewObstacleZ];
+    [self spawnNewObstacleZ];
     
     _obstaclesHIV = [NSMutableArray array];
     [self spawnNewObstacleHIV];
@@ -159,6 +168,21 @@ static const NSInteger countdownTime = 5;
     [_obstaclesW addObject:obstacleW];
 }
 
+- (void)spawnNewObstacleZ {
+    CCNode *previousObstacleZ = [_obstaclesZ lastObject];
+    CGFloat previousObstacleZXPosition = previousObstacleZ.position.x;
+    if (!previousObstacleZ) {
+        // this is the first heartworm
+        previousObstacleZXPosition = firstChickenpoxPosition;
+    }
+    ObstacleZ *obstacleZ = (ObstacleZ *)[CCBReader load:@"ObstacleZ"];
+    obstacleZ.position = ccp(previousObstacleZXPosition + distanceBetweenChickenpoxs, 50);
+    [obstacleZ setupRandomPosition];
+    
+    [_physicsNode addChild:obstacleZ];
+    [_obstaclesZ addObject:obstacleZ];
+}
+
 - (void)spawnNewObstacleHIV {
     CCNode *previousObstacleHIV = [_obstaclesHIV lastObject];
     CGFloat previousObstacleHIVXPosition = previousObstacleHIV.position.x;
@@ -187,6 +211,29 @@ static const NSInteger countdownTime = 5;
     
     // finally, remove the destroyed worm
     [worm removeFromParent];
+    _points = _points + 100;
+    
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", _points];
+    
+    //reset timer
+    _countTime = countdownTime;
+    [_timerLabel setString:[NSString stringWithFormat:@"%i", _countTime]];
+    return TRUE;
+}
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair whiteblood:(CCNode *)whiteblood chicken:(CCNode *)chicken {
+    //NSLog(@"Something collided with a worm");
+    // load particle effect
+    CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"WormExplosion"];
+    // make the particle effect clean itself up, once it is completed
+    explosion.autoRemoveOnFinish = TRUE;
+    // place the particle effect on the seals position
+    explosion.position = chicken.position;
+    // add the particle effect to the same node the seal is on
+    [chicken.parent addChild:explosion];
+    
+    // finally, remove the destroyed worm
+    [chicken removeFromParent];
     _points = _points + 100;
     
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _points];

@@ -36,6 +36,7 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
+		EB5A39AC1991B41800012BB5 /* ObstacleZ.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5A39AB1991B41800012BB5 /* ObstacleZ.m */; };
 		EB6D2385197CDCDB004F8A71 /* ObstacleHIV.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6D2384197CDCDB004F8A71 /* ObstacleHIV.m */; };
 		EB77E7A01970AABD009B8C8D /* ObstacleW.m in Sources */ = {isa = PBXBuildFile; fileRef = EB77E79F1970AABD009B8C8D /* ObstacleW.m */; };
 		EB77E7A41970AECC009B8C8D /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = EB77E7A31970AECC009B8C8D /* Goal.m */; };
@@ -94,6 +95,8 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
+		EB5A39AA1991B41800012BB5 /* ObstacleZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObstacleZ.h; sourceTree = "<group>"; };
+		EB5A39AB1991B41800012BB5 /* ObstacleZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObstacleZ.m; sourceTree = "<group>"; };
 		EB6D2383197CDCDB004F8A71 /* ObstacleHIV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObstacleHIV.h; path = Source/ObstacleHIV.h; sourceTree = "<group>"; };
 		EB6D2384197CDCDB004F8A71 /* ObstacleHIV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObstacleHIV.m; path = Source/ObstacleHIV.m; sourceTree = "<group>"; };
 		EB77E79E1970AABD009B8C8D /* ObstacleW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObstacleW.h; path = Source/ObstacleW.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				EB77E7A31970AECC009B8C8D /* Goal.m */,
 				EB77E79E1970AABD009B8C8D /* ObstacleW.h */,
 				EB77E79F1970AABD009B8C8D /* ObstacleW.m */,
+				EB5A39AA1991B41800012BB5 /* ObstacleZ.h */,
+				EB5A39AB1991B41800012BB5 /* ObstacleZ.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				EBB8F94B1989C704003E3B7E /* MainScene.m in Sources */,
 				B7378994180767190076A88C /* Gameplay.m in Sources */,
+				EB5A39AC1991B41800012BB5 /* ObstacleZ.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				EB77E7A01970AABD009B8C8D /* ObstacleW.m in Sources */,
 			);
