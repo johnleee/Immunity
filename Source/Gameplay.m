@@ -2,7 +2,7 @@
 //  MainScene.m
 //  PROJECTNAME
 //
-//  Created by Viktor on 10/10/13.
+//  Created by John Lee on 10/10/13.
 //  Copyright (c) 2013 Apportable. All rights reserved.
 //
 
@@ -11,13 +11,15 @@
 #import "ObstacleZ.h"
 #import "ObstacleHIV.h"
 
-static const CGFloat firstHeartwormPosition = 180.f;
+static const CGFloat firstHeartwormPosition = 380.f;
 static const CGFloat distanceBetweenHeartworms = 160.f;
-static const CGFloat firstHIVPosition = 400.f;
+static const CGFloat firstHIVPosition = 800.f;
 static const CGFloat distanceBetweenHIVs = 900.f;
-static const CGFloat firstChickenpoxPosition = 260.f;
+static const CGFloat firstChickenpoxPosition = 680.f;
 static const CGFloat distanceBetweenChickenpoxs = 420.f;
 static const NSInteger countdownTime = 5;
+static const NSInteger countdownTimeDouble = 9;
+static const NSInteger displayCount = 15;
 
 @implementation Gameplay {
     CCSprite *_whiteblood;
@@ -35,12 +37,14 @@ static const NSInteger countdownTime = 5;
     CCLabelTTF *_scoreLabel;
     CCLabelTTF *_timerLabel;
     NSInteger _countTime;
+    NSInteger _displayCounter;
     CCButton *_restartMenu;
     BOOL _gameOver;
     CGFloat _scrollSpeed;
 }
 
 - (void)didLoadFromCCB {
+    _displayCounter = displayCount;
     _grounds = @[_ground1, _ground2];
     self.userInteractionEnabled = TRUE;
     
@@ -66,6 +70,7 @@ static const NSInteger countdownTime = 5;
     
     _scrollSpeed = 100.f;
     _countTime = countdownTime;
+    
     [self schedule:@selector(countDown:) interval:1.0f];// 0.5second intervals
 }
 
@@ -178,10 +183,21 @@ static const NSInteger countdownTime = 5;
         // this is the first heartworm
         previousObstacleWXPosition = firstHeartwormPosition;
     }
+    
+    CCLabelTTF *hitlabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"HIT ME"] fontName:@"Verdana-Bold" fontSize:11.0f];
+    //scorelabel.positionType = CCPositionTypeNormalized;
+    //scorelabel.position = ccp(-10.00f, 11.00f);
+    
     ObstacleW *obstacleW = (ObstacleW *)[CCBReader load:@"ObstacleW"];
     obstacleW.position = ccp(previousObstacleWXPosition + distanceBetweenHeartworms, 50);
+    if (_displayCounter > 0) {
+         [obstacleW addChild:hitlabel];
+        _displayCounter--;
+    }
+   
     [obstacleW setupRandomPosition];
-    
+
+    //[_physicsNode addChild:scorelabel];
     [_physicsNode addChild:obstacleW];
     [_obstaclesW addObject:obstacleW];
 }
@@ -193,9 +209,17 @@ static const NSInteger countdownTime = 5;
         // this is the first heartworm
         previousObstacleZXPosition = firstChickenpoxPosition;
     }
+    
+       CCLabelTTF *hitlabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"HIT ME"] fontName:@"Verdana-Bold" fontSize:11.0f];
+    
     ObstacleZ *obstacleZ = (ObstacleZ *)[CCBReader load:@"ObstacleZ"];
     obstacleZ.position = ccp(previousObstacleZXPosition + distanceBetweenChickenpoxs, 50);
     [obstacleZ setupRandomPosition];
+    
+    if (_displayCounter > 0) {
+        [obstacleZ addChild:hitlabel];
+        _displayCounter--;
+    }
     
     [_physicsNode addChild:obstacleZ];
     [_obstaclesZ addObject:obstacleZ];
@@ -208,9 +232,17 @@ static const NSInteger countdownTime = 5;
         // this is the first heartworm
         previousObstacleHIVXPosition = firstHIVPosition;
     }
+    
+    CCLabelTTF *hitlabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"DANGER!"] fontName:@"Verdana-Bold" fontSize:11.0f];
+    
     ObstacleHIV *obstacleHIV = (ObstacleHIV *)[CCBReader load:@"ObstacleHIV"];
     obstacleHIV.position = ccp(previousObstacleHIVXPosition + distanceBetweenHIVs, 50);
     [obstacleHIV setupRandomPosition];
+    
+    if (_displayCounter > 0) {
+        [obstacleHIV addChild:hitlabel];
+        _displayCounter--;
+    }
     
     [_physicsNode addChild:obstacleHIV];
     [_obstaclesHIV addObject:obstacleHIV];
@@ -257,7 +289,7 @@ static const NSInteger countdownTime = 5;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _points];
     
     //reset timer
-    _countTime = countdownTime;
+    _countTime = countdownTimeDouble;
     [_timerLabel setString:[NSString stringWithFormat:@"%i", _countTime]];
     return TRUE;
 }
