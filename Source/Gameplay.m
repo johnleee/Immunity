@@ -83,7 +83,7 @@ static const NSInteger displayCount = 10;
     
     [self schedule:@selector(countDown:) interval:1.0f];// 0.5second intervals
     
-    [self schedule:@selector(instructionsTimer:) interval:12.0f];
+    [self schedule:@selector(instructionsTimer:) interval:7.0f];
 }
 
 - (void)update:(CCTime)delta {
@@ -347,6 +347,7 @@ static const NSInteger displayCount = 10;
         _scrollSpeed = 0.f;
         _gameOver = TRUE;
         _restartMenu.visible = TRUE;
+        _instructions.visible = FALSE;
         _whiteblood.rotation = 90.f;
         _whiteblood.physicsBody.allowsRotation = FALSE;
         [_whiteblood stopAllActions];
