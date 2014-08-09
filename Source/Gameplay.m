@@ -49,7 +49,7 @@ static const NSInteger displayCount = 10;
     
     
     
-    _instructions = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"TAP-TAP to play. You have 7 seconds to consume the\nBLUE and YELLOW viruses and regain your lifespan.\n\AVOID the RED viruses!"] fontName:@"Verdana-Bold" fontSize:14.0f];
+    _instructions = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"TAP-TAP to play. You have 7 seconds to consume the\nBLUE and YELLOW viruses and regain your lifespan.\n\AVOID the RED viruses! Fight for Immunity!"] fontName:@"Chalkduster" fontSize:16.0f];
     _instructions.positionType = CCPositionTypeNormalized;
     _instructions.position = ccp(0.50f, 0.70f);
     [self addChild:_instructions];
@@ -83,7 +83,7 @@ static const NSInteger displayCount = 10;
     
     [self schedule:@selector(countDown:) interval:1.0f];// 0.5second intervals
     
-    [self schedule:@selector(instructionsTimer:) interval:15.0f];
+    [self schedule:@selector(instructionsTimer:) interval:12.0f];
 }
 
 - (void)update:(CCTime)delta {
@@ -196,7 +196,7 @@ static const NSInteger displayCount = 10;
         previousObstacleWXPosition = firstHeartwormPosition;
     }
     
-    CCLabelTTF *hitlabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"HIT ME"] fontName:@"Verdana-Bold" fontSize:11.0f];
+    CCLabelTTF *hitlabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"HIT ME"] fontName:@"Chalkduster" fontSize:11.0f];
     //scorelabel.positionType = CCPositionTypeNormalized;
     //scorelabel.position = ccp(-10.00f, 11.00f);
     
@@ -222,7 +222,7 @@ static const NSInteger displayCount = 10;
         previousObstacleZXPosition = firstChickenpoxPosition;
     }
     
-       CCLabelTTF *hitlabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"HIT ME"] fontName:@"Verdana-Bold" fontSize:11.0f];
+       CCLabelTTF *hitlabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"HIT ME"] fontName:@"Chalkduster" fontSize:11.0f];
     
     ObstacleZ *obstacleZ = (ObstacleZ *)[CCBReader load:@"ObstacleZ"];
     obstacleZ.position = ccp(previousObstacleZXPosition + distanceBetweenChickenpoxs, 50);
@@ -245,7 +245,7 @@ static const NSInteger displayCount = 10;
         previousObstacleHIVXPosition = firstHIVPosition;
     }
     
-    CCLabelTTF *hitlabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"DANGER!"] fontName:@"Verdana-Bold" fontSize:11.0f];
+    CCLabelTTF *hitlabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"DANGER!"] fontName:@"ChalkboardSE-Bold" fontSize:12.0f];
     
     ObstacleHIV *obstacleHIV = (ObstacleHIV *)[CCBReader load:@"ObstacleHIV"];
     obstacleHIV.position = ccp(previousObstacleHIVXPosition + distanceBetweenHIVs, 50);
