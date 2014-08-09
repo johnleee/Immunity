@@ -17,9 +17,9 @@ static const CGFloat firstHIVPosition = 800.f;
 static const CGFloat distanceBetweenHIVs = 900.f;
 static const CGFloat firstChickenpoxPosition = 680.f;
 static const CGFloat distanceBetweenChickenpoxs = 420.f;
-static const NSInteger countdownTime = 5;
+static const NSInteger countdownTime = 7;
 static const NSInteger countdownTimeDouble = 9;
-static const NSInteger displayCount = 15;
+static const NSInteger displayCount = 10;
 
 @implementation Gameplay {
     CCSprite *_whiteblood;
@@ -36,6 +36,7 @@ static const NSInteger displayCount = 15;
     NSInteger _points;
     CCLabelTTF *_scoreLabel;
     CCLabelTTF *_timerLabel;
+    CCLabelTTF *_instructions;
     NSInteger _countTime;
     NSInteger _displayCounter;
     CCButton *_restartMenu;
@@ -45,6 +46,15 @@ static const NSInteger displayCount = 15;
 
 - (void)didLoadFromCCB {
     _displayCounter = displayCount;
+    
+    
+    
+    _instructions = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"TAP-TAP to play. You have 7 seconds to consume the\nBLUE and YELLOW viruses and regain your lifespan.\n\AVOID the RED viruses!"] fontName:@"Verdana-Bold" fontSize:14.0f];
+    _instructions.positionType = CCPositionTypeNormalized;
+    _instructions.position = ccp(0.50f, 0.70f);
+    [self addChild:_instructions];
+
+    
     _grounds = @[_ground1, _ground2];
     self.userInteractionEnabled = TRUE;
     
@@ -72,6 +82,8 @@ static const NSInteger displayCount = 15;
     _countTime = countdownTime;
     
     [self schedule:@selector(countDown:) interval:1.0f];// 0.5second intervals
+    
+    [self schedule:@selector(instructionsTimer:) interval:15.0f];
 }
 
 - (void)update:(CCTime)delta {
@@ -313,6 +325,11 @@ static const NSInteger displayCount = 15;
         [self unschedule:@selector(countDown:)];
         [self gameOver];
     }
+}
+
+-(void)instructionsTimer:(CCTime)delta {
+    _instructions.visible = false;
+    
 }
 
 - (void)restart {
